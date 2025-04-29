@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo" id="logo">
+    </div>
+    <h1 class="sidebar-title">Recipe Generator</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('recipe')">🍽 Find Recipes</a></li>
+        <li><a href="#" onclick="showSection('saved')">💖 Saved Recipes</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Find Recipes Section -->
+    <div id="recipe" class="section">
+      <div class="hero">
+        <h1>🥗 Smart Recipe Finder</h1>
+        <p>Discover delicious recipes tailored to your ingredients and preferences!</p>
+      </div>
+
+      <div class="container">
+        <div class="input-area">
+          <input type="text" id="ingredientInput" placeholder="Type an ingredient...">
+          <button onclick="addIngredient()">➕ Add Ingredient</button>
+        </div>
+
+        <div id="ingredientList"></div>
+
+        <div class="filters">
+          <select id="dietSelect">
+            <option value="">Any Diet</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="ketogenic">Keto</option>
+          </select>
+
+          <select id="cuisineSelect">
+            <option value="">Any Cuisine</option>
+            <option value="indian">Indian</option>
+            <option value="italian">Italian</option>
+            <option value="chinese">Chinese</option>
+          </select>
+
+          <button onclick="searchRecipes()">🔍 Find Recipes</button>
+        </div>
+
+        <h2>📋 Recipes</h2>
+        <div id="recipes"></div>
+      </div>
+    </div>
+
+    <!-- Saved Recipes Section -->
+    <div id="saved" class="section" style="display: none;">
+      <h1>💖 Saved Recipes</h1>
+      <p>Your favorite recipes saved for easy access!</p>
+      <div id="savedRecipes"></div>
+    </div>
+  </div>
+
+
+      
+  <script src="script.js"></script>
+</body>
+</html>
